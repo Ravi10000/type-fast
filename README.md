@@ -1,11 +1,12 @@
-# Getting Started with Create React App
+# Getting Started with typeFast
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<!-- This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). -->
+This project is setup by Ravi Sharma.
 
-## Available Scripts
+### `cool`
 
-In the project directory, you can run:
-
+and I welcome everyone to contribute to this project, and help me build it more fast efficient.
+<!-- 
 ### `npm start`
 
 Runs the app in the development mode.\
@@ -67,4 +68,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 ### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify) -->
