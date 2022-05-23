@@ -5,7 +5,7 @@ This project is setup by Ravi Sharma.
 
 ### `cool`
 
-and I welcome everyone to contribute to this project, and help me build it more fast efficient.
+and I welcome everyone to contribute to this project, and help me build it  fast and efficient.
 <!-- 
 ### `npm start`
 
