@@ -1,76 +1,73 @@
-import React, { useState, useEffect } from 'react';
-import paragraph from './utils/paragraph';
-import './App.styles.scss';
+import React from 'react';
 
-function App() {
-  const [wordToType, setPara] = useState({word: paragraph.split(' '), color: 'red'})
-  const {word, color} = wordToType
-  // const [typedWord, setTypedWord] = useState('')
-  // const [count, setCount] = useState(0);
-  useEffect(()=>{
-    async function fetchApi(){
-      const res = await fetch('https://api.quotable.io/random');
-      const resJson = await res.json()
-      console.log(resJson.content.split(' '))
-      // setPara(resJson.content.split(' '))
-   }
-   fetchApi()
-  }, [])
-  
-
-  const handleChange = event=>{
-    let {value} = event.target;
-    let wordToCheck = word[0]
-    let currentTypedWord = value.slice(0, -1)
-    // setTypedWord(currentTypedWord)
-      
-      if(currentTypedWord === wordToCheck){
-        //clearing input box
-        event.target.value = ''
-        //removing typed word
-        word.shift()
-      if(value.length > 1 ) setPara({...wordToType, word})
+export default class App2 extends React.Component{
+    constructor(props){
+        super(props)
+        this.state = {
+            para: 'This is a quote.'.split(' ')
+        }
     }
+    componentDidMount(){
+        fetch('https://api.quotable.io/random')
+        .then(res => res.json())
+        .then(result => {
+            let newPara = result.content.split(' ')
+            this.setState({para: newPara})
+            console.log(result)
+        }).catch(err => {
+            console.log(err)
+            this.setState({para: 'Something is not right.'})
+        })
     }
-  const styles = {
-    color,
-    display: 'inline-block',
-    fontSize: '24px',
-    width: '300px'
-  }
-  const currentTextStyles = {
-    color: 'steelblue',
-    fontWeight: 'bold',
-  }
-  const normalStyles = {
-    color: 'black',
-  }
-  const inputStyles = {
-    fontSize: '20px',
-    border: '.5px solid black',
-    outline: 'none',
-    height: '30px'
-  }
-  return (
-    <div className="App">
-     <h1>Type to learn</h1>
-      <div className='paragraph' style={styles}>
-      
-      {
-        word.map((w, i) => <span style={i === 0 ? currentTextStyles : normalStyles}> {w + ' '}</span>)
-      }
-      </div>
-      <br/><br/>
-      <input 
-      style={inputStyles}
-      type="text" 
-      onChange={(e) => handleChange(e)}
-      />
-     <div>
-     
-     </div>
-    </div>
-  )
+    handleSubmit(e, typedWord){
+        let paraToCheck = this.state.para
+        let currentWordInPara = paraToCheck[0]
+        if(typedWord === currentWordInPara){
+            console.log('paraToCheck', paraToCheck)
+            e.target.value = ''
+            paraToCheck.shift()
+            console.log(paraToCheck)
+            this.setState({para: paraToCheck})
+        }else{
+            console.log(false)
+        }
+    }
+    handleChange(e){
+        let {value} = e.target;
+        console.log(value.slice(-1))
+        if((value.slice(-1) === ' ' || value.slice(-1) === '.') && value.length > 1){
+            this.handleSubmit(e, value.slice(0, -1))
+        }
+        // if(value.slice(0, -1))
+        // let {value} = e.target;
+        // let wordToCheck = this.state.para[0]
+        // console.log(value, wordToCheck);
+        // let currentTypedWord = value.slice(0, -1)
+        // if(currentTypedWord === wordToCheck){
+        //     //clearing input box
+        //     e.target.value = ''
+        //     //removing typed word
+            
+        //   if(value.length > 1 ) {
+        //       let para = this.para;
+        //       para.shift()
+        //       console.log(para)
+        //       this.setState({para: para})
+        //   }
+        // }
+    }
+    render(){
+        const {para} = this.state;
+        return (
+            <div className='App2'>
+                <div className='paragraph'>
+                {para.length ? para.map((word, id)=> <span key={id}> {word + ' '}</span>)
+                :
+                alert('congratulations! You finished a typing session.')    
+            }
+                </div>
+                <input type="text" onChange={(e) => this.handleChange(e)}/>
+            </div>
+        )
+    }
 }
-
-export default App;

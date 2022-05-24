@@ -1,4 +1,7 @@
-.App {
+body {
+  background-color: rgba(46, 58, 66, 0.929);
+}
+body .App {
   display: flex;
   flex-direction: column;
   justify-content: center;
