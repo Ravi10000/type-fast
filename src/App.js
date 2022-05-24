@@ -4,7 +4,8 @@ export default class App2 extends React.Component{
     constructor(props){
         super(props)
         this.state = {
-            para: 'This is a quote.'.split(' ')
+            para: 'This is a quote.'.split(' '),
+            speed: 0
         }
     }
     componentDidMount(){
