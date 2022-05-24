@@ -1,4 +1,4 @@
-.input-box {
+.input-box .input {
   margin-top: 20px;
   font-size: 24px;
   border: none;
@@ -6,4 +6,8 @@
   border-radius: 2px;
   height: 40px;
   width: 350px;
+  caret-color: rgba(45, 53, 65, 0.59);
+  padding: 0 5px 0 10px;
+  box-shadow: 0.25px 0.25px 5px grey;
+  opacity: 0.5;
 }/*# sourceMappingURL=input-box.styles.css.map */

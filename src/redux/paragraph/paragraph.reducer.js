@@ -13,10 +13,10 @@ const ParagraphReducer = (state = INITIAL_STATE, action)=>{
                 ...state,
                 para: action.payload
             }
-            case ParagraphActionTypes.FETCHING_COMPLETE:
+            case ParagraphActionTypes.TOGGLE_FETCH:
                 return {
                     ...state,
-                    isFetching: false
+                    isFetching: !state.isFetching
                 }
         default : return state
     }

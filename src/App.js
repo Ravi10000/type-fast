@@ -6,7 +6,7 @@ import InputBox from './components/input-box/input-box.component';
 import { connect } from 'react-redux';
 // import { createStructuredSelector } from 'reselect';
 // import { selectPara } from './redux/paragraph/paragraph.selectors';
-import { setParagraph, fetchingComplete} from './redux/paragraph/paragraph.actions'
+import { setParagraph, toggleFetch} from './redux/paragraph/paragraph.actions'
 import TextContainer from './components/text-container/text-container.component';
 
 // class App extends React.Component{
@@ -78,22 +78,36 @@ import TextContainer from './components/text-container/text-container.component'
 //         )
 //     }
 // }
-const App = ({setParagraph, fetchingComplete}) => {
+const handleClick = async(toggleFetch, setParagraph)=>{
+    toggleFetch()
+    const res = await fetch('https://api.quotable.io/random');
+    const jsonRes = await res.json();
+    const quote = jsonRes.content.split(' ')
+    setParagraph(quote)
+    toggleFetch()
+}
+
+const App = ({setParagraph, toggleFetch}) => {
     useEffect(()=>{
         (async function fetchQuotes(){
             const res = await fetch('https://api.quotable.io/random');
             const jsonRes = await res.json();
             const quote = jsonRes.content.split(' ')
             setParagraph(quote)
-            fetchingComplete()
+            toggleFetch()
         })()
 
-    }, [setParagraph, fetchingComplete])
+    }, [setParagraph, toggleFetch])
     return(
     <div className='App'>
-        <h1 className='title'>Type fast</h1>
+        <h1 className='title'>
+            <span className='project'>&lt;Project&gt;</span> Type Fast</h1>
         <TextContainer/>
         <InputBox/>
+        <button className='restart-btn'
+        onClick={e => handleClick(toggleFetch, setParagraph)}>
+            <span>Restart</span>
+        </button>
     </div>)
 }
 
@@ -103,7 +117,7 @@ const App = ({setParagraph, fetchingComplete}) => {
 
 const mapDispatchToProps = dispatch=>({
     setParagraph: para => dispatch(setParagraph(para)),
-    fetchingComplete: ()=> dispatch(fetchingComplete())
+    toggleFetch: ()=> dispatch(toggleFetch())
 })
 
 export default connect(null, mapDispatchToProps)(App)

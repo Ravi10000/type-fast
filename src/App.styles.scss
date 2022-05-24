@@ -1,4 +1,5 @@
 body{
+    font-family: 'Poppins', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -7,13 +8,36 @@ body{
     font-size: 24px;
     text-align: center;
     .App{
+        margin-top: 50px;
+        padding: 20px 30px 50px 30px;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        background-color:  rgba(128, 128, 128, 0.055);
+        border-radius: 10px;
         .title{
             font-weight: 700;
             text-transform: uppercase;
+            .project{
+                color:rgba(84, 105, 119, 0.727)
+            }
         }
+    .restart-btn{
+        margin-top: 20px;
+        font-size: 24px;
+        background-color: #2ec4b6;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 500;
+        border: none;
+        border-radius: 3px;
+        padding: 5px 15px 5px 15px;
+        box-shadow: 2px .5px 10px black;
+        cursor: pointer;
+        transition: all .2s linear;
+        &:hover{
+            transform: scale(1.1);
+        }
+    }
     }
 }

@@ -58,11 +58,14 @@ const InputBox = ({para, removeTypedWord}) => {
     useEffect(()=>{
         inputBox.current.focus()
     }, [])
-    return(<input 
+    return(<div className="input-box">
+        <input 
         ref={inputBox}
-className="input-box"
+className="input"
 type="text" 
-onChange={e => handleChange(e, para, removeTypedWord)}/>)
+onChange={e => handleChange(e, para, removeTypedWord)}/>
+<span className="caret"></span>
+    </div>)
 }
 const mapStateToProps = createStructuredSelector({
     para: selectPara,

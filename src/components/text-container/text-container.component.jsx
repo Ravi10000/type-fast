@@ -1,6 +1,6 @@
 // import React from "react";
 import { compose } from "redux";
-import { connect, Connect } from "react-redux";
+import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 import { selectIsFetching } from "../../redux/paragraph/paragraph.selectors";
 import Text from "../text/text.component";

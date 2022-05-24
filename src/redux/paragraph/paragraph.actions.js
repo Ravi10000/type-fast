@@ -10,6 +10,6 @@ export const removeTypedWord = paragraph => ({
     payload: paragraph
 })
 
-export const fetchingComplete = ()=>({
-    type: ParagraphActionTypes.FETCHING_COMPLETE
+export const toggleFetch = ()=>({
+    type: ParagraphActionTypes.TOGGLE_FETCH
 })
