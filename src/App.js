@@ -1,12 +1,13 @@
 import React, {useEffect} from 'react';
 import './App.styles.scss'
-import Text from './components/Text/text.component';
+// import Text from './components/text/text.component';
 import InputBox from './components/input-box/input-box.component';
 
 import { connect } from 'react-redux';
 // import { createStructuredSelector } from 'reselect';
 // import { selectPara } from './redux/paragraph/paragraph.selectors';
-import { setParagraph} from './redux/paragraph/paragraph.actions'
+import { setParagraph, fetchingComplete} from './redux/paragraph/paragraph.actions'
+import TextContainer from './components/text-container/text-container.component';
 
 // class App extends React.Component{
 //     constructor(props){
@@ -77,20 +78,21 @@ import { setParagraph} from './redux/paragraph/paragraph.actions'
 //         )
 //     }
 // }
-const App = ({setParagraph}) => {
+const App = ({setParagraph, fetchingComplete}) => {
     useEffect(()=>{
         (async function fetchQuotes(){
             const res = await fetch('https://api.quotable.io/random');
             const jsonRes = await res.json();
             const quote = jsonRes.content.split(' ')
             setParagraph(quote)
+            fetchingComplete()
         })()
 
-    }, [setParagraph])
+    }, [setParagraph, fetchingComplete])
     return(
     <div className='App'>
         <h1 className='title'>Type fast</h1>
-        <Text/>
+        <TextContainer/>
         <InputBox/>
     </div>)
 }
@@ -100,7 +102,8 @@ const App = ({setParagraph}) => {
 // })
 
 const mapDispatchToProps = dispatch=>({
-    setParagraph: para => dispatch(setParagraph(para))
+    setParagraph: para => dispatch(setParagraph(para)),
+    fetchingComplete: ()=> dispatch(fetchingComplete())
 })
 
 export default connect(null, mapDispatchToProps)(App)

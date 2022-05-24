@@ -2,6 +2,7 @@ import ParagraphActionTypes from "./paragraph.types";
 
 const INITIAL_STATE = {
     para: 'SOMETHING IS NOT RIGHT'.split(' '),
+    isFetching: true,
 }
 
 const ParagraphReducer = (state = INITIAL_STATE, action)=>{
@@ -12,6 +13,11 @@ const ParagraphReducer = (state = INITIAL_STATE, action)=>{
                 ...state,
                 para: action.payload
             }
+            case ParagraphActionTypes.FETCHING_COMPLETE:
+                return {
+                    ...state,
+                    isFetching: false
+                }
         default : return state
     }
 }

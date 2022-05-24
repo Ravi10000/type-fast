@@ -6,3 +6,8 @@ export const selectPara = createSelector(
     [selectParagraph],
     paragraph => paragraph.para
 )
+
+export const selectIsFetching = createSelector(
+    [selectParagraph],
+    paragraph => paragraph.isFetching
+)

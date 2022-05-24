@@ -9,3 +9,7 @@ export const removeTypedWord = paragraph => ({
     type: ParagraphActionTypes.REMOVE_TYPED_WORD,
     payload: paragraph
 })
+
+export const fetchingComplete = ()=>({
+    type: ParagraphActionTypes.FETCHING_COMPLETE
+})

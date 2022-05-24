@@ -1,8 +1,10 @@
 import React from "react";
 import './text.styles.scss';
+// import { compose } from "redux";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 import { selectPara } from "../../redux/paragraph/paragraph.selectors";
+// import WithSpinner from "../withSpinner/with-spinner.component";
 
 const Text = ({para}) =>
     <div className="text">
@@ -20,6 +22,7 @@ const Text = ({para}) =>
 
 
 const mapStateToProps = createStructuredSelector({
-    para: selectPara
+    para: selectPara,
 })
+
 export default connect(mapStateToProps)(Text)
