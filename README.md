@@ -4,8 +4,8 @@
 This project is setup by Ravi Sharma.
 
 ## `About <Project> Type Fast`
-    This project provides typing environmet to imporve typing by providing quotes from an Api that gives a random quote everytime we send a request to its endpoint.
-    For now the endpoint is 'https://api.quotable.io/random'
+    This project provides typing environmt to imporve typing by providing \quotes from an Api that gives a random quote everytime we send a request \to its endpoint.
+    \For now the endpoint is 'https://api.quotable.io/random'
 
 
 ## `type-fast-live`
