@@ -20,19 +20,22 @@ body{
             font-weight: 700;
             text-transform: uppercase;
             .project{
-                color:rgba(84, 105, 119, 0.727)
+                color:#546977b9
             }
         }
     .restart-btn{
         margin-top: 20px;
+        margin-left: auto;
+        margin-right: 6vw;
         font-size: 24px;
-        background-color: #2ec4b6;
+        // background-color: #2ec4b6;
+        background: linear-gradient(0.25turn, #719628, #2b7e1c);
         font-family: 'Poppins', sans-serif;
         font-weight: 500;
         border: none;
         border-radius: 3px;
         padding: 5px 15px 5px 15px;
-        box-shadow: 2px .5px 10px black;
+        box-shadow: .5px 0px 5px black;
         cursor: pointer;
         transition: all .2s linear;
         &:hover{

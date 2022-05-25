@@ -23,18 +23,20 @@ body .App .title {
   text-transform: uppercase;
 }
 body .App .title .project {
-  color: rgba(84, 105, 119, 0.727);
+  color: rgba(84, 105, 119, 0.7254901961);
 }
 body .App .restart-btn {
   margin-top: 20px;
+  margin-left: auto;
+  margin-right: 6vw;
   font-size: 24px;
-  background-color: #2ec4b6;
+  background: linear-gradient(0.25turn, #719628, #2b7e1c);
   font-family: "Poppins", sans-serif;
   font-weight: 500;
   border: none;
   border-radius: 3px;
   padding: 5px 15px 5px 15px;
-  box-shadow: 2px 0.5px 10px black;
+  box-shadow: 0.5px 0px 5px black;
   cursor: pointer;
   transition: all 0.2s linear;
 }
