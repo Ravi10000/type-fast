@@ -1,9 +1,9 @@
-# Getting Started with typeFast
+# Getting Started with <Project> TypeFast
 
 <!-- This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). -->
 This project is setup by Ravi Sharma.
 
-### `cool`
+### `Welcome`
 
 and I welcome everyone to contribute to this project, and help me build it  fast and efficient.
 <!-- 
