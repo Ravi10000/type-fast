@@ -43,4 +43,13 @@ body{
         }
     }
     }
+
+    @media screen and (max-width: 450px) {
+        body{
+            .App{
+                width: 90vw;
+                height: 90vh;
+            }
+        }
+    }
 }
