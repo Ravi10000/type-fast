@@ -3,9 +3,12 @@
 <!-- This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). -->
 This project is setup by Ravi Sharma.
 
-### `Welcome`
+## `About <Project> Type Fast`
+This project provides typing environmet to imporve typing by providing quotes from an Api that gives a random quote everytime we send a request to its endpoint.
+For now the endpoint is 'https://api.quotable.io/random'
 
-and I welcome everyone to contribute to this project, and help me build it  fast and efficient.
+### `Welcome`
+I welcome everyone to contribute to this project, and help me build it fast and efficient.
 <!-- 
 ### `npm start`
 
