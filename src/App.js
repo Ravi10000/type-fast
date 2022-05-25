@@ -101,7 +101,7 @@ const App = ({setParagraph, toggleFetch}) => {
     return(
     <div className='App'>
         <h1 className='title'>
-            <span className='project'>&lt;Project&gt;</span> Type Fast</h1>
+            <span className='project'>&lt;Project&gt;</span> <span>Type Fast</span></h1>
         <TextContainer/>
         <InputBox/>
         <button className='restart-btn'

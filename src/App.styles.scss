@@ -2,7 +2,6 @@ body{
     font-family: 'Poppins', sans-serif;
     display: flex;
     justify-content: center;
-    align-items: center;
     background-color: rgba(46, 58, 66, 0.929);
     color: #fff;
     font-size: 24px;
@@ -20,7 +19,7 @@ body{
             font-weight: 700;
             text-transform: uppercase;
             .project{
-                color:#546977b9
+                color:#546977b9;
             }
         }
     .restart-btn{
@@ -43,13 +42,22 @@ body{
         }
     }
     }
-
-    @media screen and (max-width: 450px) {
-        body{
-            .App{
-                width: 90vw;
-                height: 90vh;
-            }
-        }
-    }
 }
+
+@media screen and (max-width: 450px) {
+    body {
+      .App{
+        background-color:  rgba(128, 128, 128, 0.155);
+        margin-top: 10px;
+        padding: 25px;
+          height: 70vh;
+          width: 75vw;
+          .title{
+            font-weight: 700;
+            font-size: 32px;
+            display: flex;
+            flex-direction: column;
+        }
+      }
+    }
+  }

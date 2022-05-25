@@ -9,4 +9,11 @@
 .text .congrats {
   font-size: 32px;
   font-weight: bold;
+}
+
+@media screen and (max-width: 450px) {
+  .text {
+    width: 300px;
+    font-size: 18px;
+  }
 }/*# sourceMappingURL=text.styles.css.map */

@@ -2,7 +2,6 @@ body {
   font-family: "Poppins", sans-serif;
   display: flex;
   justify-content: center;
-  align-items: center;
   background-color: rgba(46, 58, 66, 0.929);
   color: #fff;
   font-size: 24px;
@@ -42,4 +41,20 @@ body .App .restart-btn {
 }
 body .App .restart-btn:hover {
   transform: scale(1.1);
+}
+
+@media screen and (max-width: 450px) {
+  body .App {
+    background-color: rgba(128, 128, 128, 0.155);
+    margin-top: 10px;
+    padding: 25px;
+    height: 70vh;
+    width: 75vw;
+  }
+  body .App .title {
+    font-weight: 700;
+    font-size: 32px;
+    display: flex;
+    flex-direction: column;
+  }
 }/*# sourceMappingURL=App.styles.css.map */

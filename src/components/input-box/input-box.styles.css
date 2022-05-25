@@ -10,4 +10,11 @@
   padding: 0 5px 0 10px;
   box-shadow: 0.25px 0.25px 5px grey;
   opacity: 0.5;
+}
+
+@media screen and (max-width: 450px) {
+  .input-box .input {
+    width: 70vw;
+    font-size: 16px;
+  }
 }/*# sourceMappingURL=input-box.styles.css.map */
